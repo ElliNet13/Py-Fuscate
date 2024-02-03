@@ -31,9 +31,11 @@ python3 py_fuscate.py
 usage: py_fuscate.py [-h] -i INPUT -o OUTPUT -c COMPLEXITY
 ```
 
-## Author
+## Authors
 
 👤 **Sandaru Ashen**
+
+👤 **ElliNet13**
 
 * Github: [@ElliNet13](https://github.com/ElliNet13)
 
