@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-# By Sandaru Ashen: https://github.com/Sl-Sanda-Ru, https://t.me/Sl_Sanda_Ru
+# By Sandaru Ashen and edited by ElliNet13: https://github.com/Sl-Sanda-Ru, https://t.me/Sl_Sanda_Ru, https://github.com/ElliNet13
 
 
 import os
@@ -23,7 +23,6 @@ def prett(text):
 
 PYTHON_VERSION = "python" + ".".join(str(i) for i in sys.version_info[:2])
 try:
-    import requests
     import tqdm
     import colorama
     import pyfiglet
@@ -101,7 +100,7 @@ def logo() -> None:
     print(
         color2
         + pyfiglet.figlet_format(
-            "Py\nFuscate",
+            "Py\nFuscate\nElliNet13\nEdition",
             font=font,
             justify="center",
             width=os.get_terminal_size().columns,
@@ -109,6 +108,11 @@ def logo() -> None:
         end="",
     )
     print(color1 + "_" * os.get_terminal_size().columns, end="\n" * 2)
+    print(color2 + "Py Fuscate ElliNet13 Edition")
+    print()
+    print(YEL + prett("[+] An version of PyFuscate that was edited by ElliNet13"))
+    print(YEL + prett("[+] Version 1.6"))
+    print(RED + prett("[!] Updates disabled"))
 
 
 def parse_args():
@@ -134,25 +138,11 @@ def parse_args():
 
 
 def check_update():
-    LATEST_VER = requests.get(
-        "https://raw.githubusercontent.com/Sl-Sanda-Ru/Py-Fuscate/main/.version"
-    ).text.strip()
-    with open(".version") as version:
-        return True if float(version.read().strip()) < float(LATEST_VER) else False
+    return False
 
 
 def update():
-    if ".git" in os.listdir():
-        _ = subprocess.run(["git", "stash"], check=True)
-        _ = subprocess.run(["git", "pull"], check=True)
-    else:
-        latest_source = requests.get(
-            "https://raw.githubusercontent.com/Sl-Sanda-Ru/Py-Fuscate/main/py_fuscate.py"
-        ).content
-        with open("py_fuscate.py", "wb") as file:
-            file.write(latest_source)
-        with open(".version", "w") as file:
-            file.write(LATEST_VER)
+    pass
 
 
 def main():
@@ -175,7 +165,7 @@ def main():
                 pbar.update(1)
     with open(args.output, "w") as output:
         output.write(
-            f'# Encoded By Py-Fuscate\n# https://github.com/Sl-Sanda-Ru/Py-Fuscate\n# Make Sure You\'re Running The Program With {PYTHON_VERSION} Otherwise It May Crash\n# To Check Your Python Version Run "python -V" Command\ntry:\n\t{encoded}\nexcept KeyboardInterrupt:\n\texit()'
+            f'# Make Sure You\'re Running The Program With {PYTHON_VERSION} Otherwise It May Crash\n# To Check Your Python Version Run "python -V" Command\ntry:\n\t{encoded}\nexcept KeyboardInterrupt:\n\texit()'
         )
     print(LIGRE + "\t[+] encoding successful!\n\tsaved as ".title() + args.output)
 
