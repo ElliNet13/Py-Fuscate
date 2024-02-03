@@ -15,6 +15,7 @@ import gzip
 import bz2
 import binascii
 import zlib
+import requests
 
 
 def prett(text):
@@ -111,8 +112,6 @@ def logo() -> None:
     print(color2 + "Py Fuscate ElliNet13 Edition")
     print()
     print(YEL + prett("[+] An version of PyFuscate that was edited by ElliNet13"))
-    print(YEL + prett("[+] Version 1.6"))
-    print(RED + prett("[!] Updates disabled"))
 
 
 def parse_args():
@@ -138,11 +137,25 @@ def parse_args():
 
 
 def check_update():
-    return False
+    LATEST_VER = requests.get(
+        "https://raw.githubusercontent.com/ElliNet13/Py-Fuscate/main/.version"
+    ).text.strip()
+    with open(".version") as version:
+        return True if float(version.read().strip()) < float(LATEST_VER) else False
 
 
 def update():
-    pass
+    if ".git" in os.listdir():
+        _ = subprocess.run(["git", "stash"], check=True)
+        _ = subprocess.run(["git", "pull"], check=True)
+    else:
+        latest_source = requests.get(
+            "https://raw.githubusercontent.com/ElliNet13/Py-Fuscate/main/py_fuscate.py"
+        ).content
+        with open("py_fuscate.py", "wb") as file:
+            file.write(latest_source)
+        with open(".version", "w") as file:
+            file.write(LATEST_VER)
 
 
 def main():
