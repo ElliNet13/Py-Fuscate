@@ -91,7 +91,6 @@ def encode(source: str) -> str:
 
 
 def logo() -> None:
-    _ = subprocess.run([CLEAR], shell=True)
     font = random.choice(FONTS)
     color1 = random.choice(COLORS)
     color2 = random.choice(COLORS)
