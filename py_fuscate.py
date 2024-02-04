@@ -111,6 +111,7 @@ def logo() -> None:
     print(color2 + "Py Fuscate ElliNet13 Edition")
     print()
     print(YEL + prett("[+] An version of PyFuscate that was edited by ElliNet13"))
+    print(YEL + prett("[+] Built off of version 1.6"))
 
 
 def parse_args():
