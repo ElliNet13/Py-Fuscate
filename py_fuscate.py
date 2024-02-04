@@ -60,7 +60,7 @@ LIMAG = colorama.Style.BRIGHT + colorama.Fore.LIGHTMAGENTA_EX
 LIBLU = colorama.Style.BRIGHT + colorama.Fore.LIGHTBLUE_EX
 LICYA = colorama.Style.BRIGHT + colorama.Fore.LIGHTCYAN_EX
 LIGRE = colorama.Style.BRIGHT + colorama.Fore.LIGHTGREEN_EX
-CLEAR = "cls" if os.name == "nt" else "clear"
+CLEAR = "true" # true does nothing
 COLORS = BLU, CYA, GRE, YEL, RED, MAG, LIYEL, LIRED, LIMAG, LIBLU, LICYA, LIGRE
 FONTS = (
     "basic",
