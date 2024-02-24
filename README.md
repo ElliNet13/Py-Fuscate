@@ -7,7 +7,7 @@
   <a href="https://raw.githubusercontent.com/ElliNet13/Py-Fuscate/main/LICENSE" target="_blank">
     <img alt="License: Apache License 2.0" src="https://img.shields.io/github/license/ElliNet13/Py-Fuscate" />
   </a>  
-  <a href="https://www.codefactor.io/repository/github/ellinet13/ellinet13.github.io"><img src="https://www.codefactor.io/repository/github/ellinet13/ellinet13.github.io/badge" alt="CodeFactor" /></a>
+  <a href="https://www.codefactor.io/repository/github/ellinet13/py-fuscate"><img src="https://www.codefactor.io/repository/github/ellinet13/py-fuscate/badge" alt="CodeFactor" /></a>
   <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/ElliNet13/Py-Fuscate?color=green">
 </p>
 
